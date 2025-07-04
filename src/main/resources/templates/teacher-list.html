@@ -13,16 +13,20 @@
     <a href="/teachers/add">교사 등록</a>
 </p>
 <table>
-    <thread>
+    <thead>
     <tr>
+        <td>ID</td>
         <td>이름</td>
         <td>액션</td>
     </tr>
-    </thread>
+    </thead>
     <tbody th:each="teacher: ${teachers}">
     <tr>
         <td th:text="${teacher.id}"></td>
         <td th:text="${teacher.name}"></td>
+        <td>
+            <a th:href="@{'/teachers/edit/' + ${teacher.id}}">수정</a>
+        </td>
     </tr>
     </tbody>
 </table>
